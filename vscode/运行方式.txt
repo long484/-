@@ -1,0 +1,23 @@
+表示脚本需要两个强制参数：
+-t 或 --target：指定测试目标URL
+-a 或 --auth：提供授权码
+正确运行方式
+基本命令格式
+powershell
+python 脚本路径.py -t 目标URL -a 授权码 [-m 模式]
+1.仅扫描模式
+python d:/vscode/python.py -t http://example.com -a AUTH123 -m scan
+2.完整测试模式：
+python d:/vscode/python.py -t http://testphp.vulnweb.com -a AUTH123 -m full
+3仅DDoS测试：
+python d:/vscode/python.py -t http://example.com -a AUTH123 -m ddos
+
+
+参数	缩写	必选	可选值	说明
+--target	-t	是	任何有效URL	要测试的目标网址
+--auth	-a	是	AUTH123 或 PENTEST2025	授权码
+--mode	-m	否	scan/ddos/full	测试模式，默认为scan
+
+如果您只是想快速测试
+可以使用这个测试命令（使用示例漏洞网站）：
+python d:/vscode/python.py -t http://testphp.vulnweb.com -a AUTH123
